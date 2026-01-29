@@ -4,6 +4,7 @@
 - Why did we put BASE_URI in .env instead of hardcoding it?
 
 Answer: using .env config values for BASE_URI allows flexibility across environments and secures sensitive values
+unlike hardcoding it
 
 **2. Resource Modeling**
 - Why did we use plural nouns for our routes?
@@ -18,7 +19,8 @@ when a request succeeds and returns data
 
 - Why is it important to return `404` instead of just an empty array or a generic error?
 
-Answer: this error clearly communicates that the requested resource does not exist
+Answer: it is important to show the error code as this error clearly communicates that the requested resource does not exist where no
+error indicators and lack of conext lead to inaccuracies
 
 **4. Testing**
 - ![GET request screenshot](./GET_request.png)
