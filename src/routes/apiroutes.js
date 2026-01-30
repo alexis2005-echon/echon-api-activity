@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const data = require('../models/dishModel');
 
-router.get('/rooms', (req, res) => {
+router.get('/dishes', (req, res) => {
     const { name, price, category, isVegetarian } = req.query;
 
     let filteredDishes = data

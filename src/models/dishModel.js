@@ -17,16 +17,16 @@ const dishes = [
         id: 3,
         name: 'chocolate lava cake',
         price: 6.0,
-        category: false,
+        category: 'dessert',
         isVegetarian: true,
     },
     {
         id: 4,
-        name: 'single',
+        name: 'grilled salmon',
         price: 18.0,
-        category: false,
+        category: 'dinner',
         isVegetarian: false,
     },
 ];
 
-module.exports = rooms;
+module.exports = dishes;
