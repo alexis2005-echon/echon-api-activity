@@ -24,3 +24,11 @@ error indicators and lack of conext lead to inaccuracies
 
 **4. Testing**
 - ![GET request screenshot](./GET_request.png)
+
+## Second Activity Practice
+**1. GET Method 1**
+- ![GET request screenshot 1](./img/GET.png)
+
+**2. POST Methods 1 & 2**
+- ![POST method screenshot 1](./img/POST_1.png)
+- ![POST method screenshot 2](./img/POST_2.png)
