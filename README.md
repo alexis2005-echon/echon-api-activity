@@ -32,3 +32,11 @@ error indicators and lack of conext lead to inaccuracies
 **2. POST Methods 1 & 2**
 - ![POST method screenshot 1](./img/POST_1.png)
 - ![POST method screenshot 2](./img/POST_2.png)
+
+
+##3. 3rd Activity
+**1. "Why did I choose to Embed the [Review/Tag/Log]?"**
+answer: Reviews are embeddded as they are connected to the main record and don't need to exist separately.
+
+**2. "Why did I choose to Reference the [Chef/User/Guest]?"**
+answer: Because chefs are independent entities that can be reused across many records. 
