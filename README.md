@@ -32,3 +32,33 @@ error indicators and lack of conext lead to inaccuracies
 **2. POST Methods 1 & 2**
 - ![POST method screenshot 1](./img/POST_1.png)
 - ![POST method screenshot 2](./img/POST_2.png)
+
+## Securing the API
+
+1. [/] Code runs via npm run dev with no errors.
+2. [/] Registration and Login endpoints are functional.
+3. [/] Middleware correctly blocks unauthorized users.
+4. [/] GitHub Repo link submitted.
+5. [/] README.md updated with the following answers:
+
+**1. Authentication vs Authorization**
+
+What is the difference between Authentication and Authorization?
+
+Answer: Authentication is a process of verifying the user's identity, Authorization
+determines what a user can access depending on their role (RBAC)
+
+**2. Security (Bcrypt)**
+
+Why did we use bcryptjs instead of saving passwords as plain text in
+MongoDB?
+
+Answer: Bcryptjs converts them into hashes that are irreversible, salting adds unique hashes to each passwords even to those that are identical 
+
+**3. JWT Structure**
+
+What does the protect middleware do when it receives a JWT from the
+client?
+
+Answer: a) The protect middleware as a barrier or bouncer by extracting the JWT from the token header, (b) Verification: uses the JWT_SECRET to ensure the token is authentic and has not yet expired, c) Identification: by decoding the user ID from the taken payload, (d) Attachment: Finds the user in MongoDB and attaches their data to req.user, allowing the next function to know exactly who is making the request.
+
