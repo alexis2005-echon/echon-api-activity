@@ -10,6 +10,12 @@ const {
     deleteDish,
     createChef,
 } = require('../controllers/dishcontroller');
+const { registerUser, loginUser, createAdmin } = require('../controllers/authController');
+const { protect, admin } = require('../middleware/authMiddleware');
+
+router.post('/auth/register', registerUser);
+router.post('/auth/login', loginUser);
+router.post('/auth/create-admin', protect, admin, createAdmin);
 
 router.get('/dishes', getAllDishes);
 router.post('/dishes', createDish);

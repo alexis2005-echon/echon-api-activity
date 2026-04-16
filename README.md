@@ -95,4 +95,31 @@ Answer:
 
 Supertest enables you to use your test script to send actual HTTP requests (such as GET and POST) to your Express application and monitor the answers. It is how you test your API endpoints programmatically. A manual tool for investigating APIs is called Postman. Supertest enables you to automate these tests, ensuring that nothing breaks when you make changes.
 
-## Activity 7:
+## Activity 7: E2E Test
+
+1. [/] Postman Collection and Environment files are exported and pushed to GitHub.
+2. [/] Code runs via newman run ... with all tests passing (0 failures).
+3. [/] GitHub Repo link submitted.
+4. [/] README.md updated with the following answers:
+
+1. E2E vs Integration:
+How does this End-to-End test differ from the Integration test we wrote in Activity
+6? (Think about the database and the server status).
+Answer:
+
+E2E tests the full real workflow (login -> token -> create -> get) on a running server and real API endpoints. Integration test checks multiple parts together too, but usually in a controlled test setup (often test DB/in-memory DB) and not the full user flow in Postman/Newman.
+
+2. Request Chaining:
+Explain how we managed to pass the JWT token from the Login request to the
+Create Resource request without manually copying and pasting it.
+Answer:
+
+In the Login test script, we saved the token to an environment variable using pm.environment.set("jwt_token", token). Then the next request used Bearer {{jwt_token}} automatically.
+
+3. CI/CD Purpose:
+Why is it useful to run tests in the terminal using Newman instead of just using
+the Postman Graphical User Interface (GUI)?
+Answer:
+
+Newman runs tests from terminal, so tests can be automated in CI/CD (like GitHub Actions), run on every push, and fail builds when something breaks.
+Postman GUI is mostly manual and not ideal for automated pipelines.
