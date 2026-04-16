@@ -123,3 +123,36 @@ Answer:
 
 Newman runs tests from terminal, so tests can be automated in CI/CD (like GitHub Actions), run on every push, and fail builds when something breaks.
 Postman GUI is mostly manual and not ideal for automated pipelines.
+
+## Activity 8: Frontend Integration
+
+1. [/] Frontend application runs successfully via npm run dev.
+2. [/] React Router successfully navigates between Login and Dashboard.
+3. [/] RBAC successfully hides specific CRUD buttons based on role.
+4. [/] GitHub Repo link submitted.
+
+1. Dynamic Routing:
+Explain what react-router-dom does in a Single Page Application. Why didn't we
+just use standard HTML <a href="/dashboard"> tags?
+
+Answer:
+
+ React-router-dom lets a Single Page Application switch views without full page reloads, preserving app state and making navigation fast. Standard <a href> causes full page refreshes, which reloads the app and loses in-memory state.
+
+2. State vs LocalStorage:
+Why did we save the JWT token in localStorage instead of just keeping it in a React
+useState variable? What happens to standard state variables when you refresh the
+page?
+
+Answer:
+
+We store JWT in localStorage so login persists across page refreshes and browser restarts. useState is in-memory only, so on refresh it resets and the token is lost (user appears logged out).
+
+3. Frontend RBAC vs Backend Authorization:
+In our React code, we hide the "Delete" button if the user is not an admin. Why is
+it still completely necessary to have the authorize('admin') middleware running
+on the backend Node.js server? (Hint: Think about malicious users and Postman).
+
+Answer:
+
+Hiding a button in React is only UI control, not security. A malicious user can still call the API directly (for example via Postman or custom scripts). Backend authorization is the real enforcement layer that blocks unauthorized delete requests.
