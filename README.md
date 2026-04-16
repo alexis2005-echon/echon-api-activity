@@ -69,3 +69,30 @@ why did we assert expect(next).not.toHaveBeenCalled() in the failure scenario?
 Answer:
 
 We use a mock function (jest.fn()) for next to check if it gets called. In a failure test, we assert it was not called to confirm the middleware correctly blocked the request from continuing.
+
+## Activity 6: Integration Testing
+
+1. [/] Code runs via npm test with all integration tests passing (Green).
+2. [/] dbHelper.js successfully creates and clears the in-memory database.
+3. [/] GitHub Repo link submitted.
+4. [/] README.md updated with the following answers:
+
+1. Unit vs. Integration: Explain the difference between the Unit Test you wrote in Activity 5 and the
+Integration Test you wrote today. What does the Integration Test check that the
+Unit Test does not?
+o Answer:
+
+Integration tests examine how various components of your application interact with one another. They test every step of the process, from routing to the database answer, by sending actual API requests to your server. The integration test verifies that the database, controller, and HTTP endpoint are all linked and functioning properly together.
+
+2. In-Memory Databases: Why did we install mongodb-memory-server instead of just connecting our tests
+to our real MongoDB Atlas URI? Mention at least two reasons.
+Answer:
+
+It runs in the computer's RAM, making tests much faster than connecting to a remote database over the internet. For each test run, a new, empty database is created. This keeps untidy, leftover data in your actual database and stops tests from interacting with one another.
+
+3. Supertest: What is the role of supertest in our test file? Why didn't we use Postman for this?
+Answer:
+
+Supertest enables you to use your test script to send actual HTTP requests (such as GET and POST) to your Express application and monitor the answers. It is how you test your API endpoints programmatically. A manual tool for investigating APIs is called Postman. Supertest enables you to automate these tests, ensuring that nothing breaks when you make changes.
+
+## Activity 7:
