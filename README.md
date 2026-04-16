@@ -32,3 +32,40 @@ error indicators and lack of conext lead to inaccuracies
 **2. POST Methods 1 & 2**
 - ![POST method screenshot 1](./img/POST_1.png)
 - ![POST method screenshot 2](./img/POST_2.png)
+
+## Activity 5: Jest Testing
+
+1. [/] Code runs via npm run test:coverage with all tests passing (Green).
+2. [/] The Jest Coverage Table is copied and pasted into your README.
+3. [/] The Formal Unit Test Documentation Table (from Part 5) is completed and included in
+your/README.
+4. [/] GitHub Repo link submitted.
+
+| Test ID | Module         | Function     | Scenario (Description)        | Expected Output | Status |
+| UT-001  | DishController | getAllDishes | Fetch all dishes successfully | HTTP 200, Array of Dish Objects | Pass |
+| UT-002  | DishController | getAllDishes | Database throws a connection error | HTTP 500, JSON message | Pass |
+| UT-003  | DishController | createDish   | Valid dish payload is provided | HTTP 201, Created Dish Object | Pass |
+| UT-004  | ChefController | createChef   | Valid chef payload is provided | HTTP 201, Created Chef Object | Pass |
+| UT-005  | ChefController | createChef   | Model validation fails during create | HTTP 400, JSON message | Pass |
+
+1. Mocking:
+Explain in your own words why we mocked Dish.find and jwt.verify. What
+specific problem does mocking solve in Unit Testing?
+Answer: 
+
+Mocking in unit testing solves the problem of external dependencies. It enables us to run fast, reliable, and focused unit tests by replacing slow or unpredictable parts with predictable, fake versions.
+
+2. Code Coverage:
+Look at your Jest Coverage report. Explain what % Branch coverage means. If your
+Branch coverage is at 50%, what does that tell you about your tests? (Hint: Think
+about if/else statements).
+Answer:
+
+It means the tests are only executing 50% or half of the conditional paths in your code. For example, if you have an if/else block, your tests might be covering the if path but completely missing the else path. The application may fail if under such untested conditions.
+
+3. Testing Middleware:
+In our authMiddleware.test.js, why did we use jest.fn() for the next variable, and
+why did we assert expect(next).not.toHaveBeenCalled() in the failure scenario?
+Answer:
+
+We use a mock function (jest.fn()) for next to check if it gets called. In a failure test, we assert it was not called to confirm the middleware correctly blocked the request from continuing.
